@@ -11,19 +11,6 @@
 
 <body>
     <div class="container-fluid main-wrapper">
-        <!-- <div class="row lcontrol">
-            <div class="col">
-                <div class="panel">
-                    <center>
-                        <div class="btn-group btn-group-lg align-self-center scenes" role="group"
-                            aria-label="Basic example">
-                            <button type="button" data-scene="1" class="btn btn-primary active">SE Mode</button>
-                            <button type="button" data-scene="2" class="btn btn-primary">BSE Mode</button>
-                        </div>
-                    </center>
-                </div>
-            </div>
-        </div> -->
         <div class="row ucontrol">
             <div class="col-3">
                 <div class="panel mb-1">
@@ -34,8 +21,8 @@
                         1. Click on the load button and wait for the image to load. <br>
                         2. Set the values of Magnification, focus & contrast.<br>
                         3. Choose the type of line and click
-                         2 points where the sixe is to be measured.<br>
-                         4. Click on check size for the output.
+                        2 points where the sixe is to be measured.<br>
+                        4. Click on check size for the output.
                     </div>
 
                 </div>
@@ -57,8 +44,6 @@
                         <input type="range" min="0" max="10" value="5" class="slider" id="clight"
                             onchange="Contrast(this.value)">
                     </div>
-
-
                     <div class="row line-btn">
                         <button id=planeb class="but col-4 line" onclick="val1(1, this),drawl()" disabled>
                             <div id=plane>Plane</div>
@@ -70,19 +55,16 @@
                             <div id=dashed>Dashed</div>
                         </button>
                     </div>
-                    <!-- <br>
-                    <button type="button" id=draw class="but sm w-100 blue" onclick=",drawl()">DRAW</button> -->
                     <br>
                     <br>
-                    <button id="checksizeb" type="button" class="but sm w-100 blue" onclick="checksize()" disabled>Check Size</button>
+                    <button id="checksizeb" type="button" class="but sm w-100 blue" onclick="checksize()" disabled>Check
+                        Size</button>
                     <br>
                     <center>
                         <div style="border-radius:15px;border:1px solid black;width: 90px;height: 30px;background-color: rgba(5, 3, 0, 0.322);font-size: large;"
                             id="output">&nbsp;Size</div>
-
                     </center>
                     <button type="button" class="but sm w-100 blue" onclick="location.reload();">Restart</button>
-
                 </div>
             </div>
             <div class="col-3">
@@ -99,74 +81,22 @@
                 </div>
             </div>
         </div>
-
     </div>
-
-    <div id="toast-wrapper" aria-live="polite" aria-atomic="true" style="position:fixed;bottom:1rem;right:1rem;">
-
-    </div>
-
-
     <script src="./js/jquery.min.js"></script>
     <script src="./js/popper.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/zoom.js"></script>
     <script>
-
         function preload(arrayOfImages) {
             $(arrayOfImages).each(function () {
                 $('<img/>')[0].src = this;
             });
         }
-
-
-
-
-
-
-
-
-
-
-        var tWrapper = $("#toast-wrapper"), ti = 0;
-        function showToast(msg, type = 0) {
-            tWrapper.append(`<div id="t${ti++}" class="toast${type == 1 ? ' danger' : (type == 2 ? ' success' : '')}" role="alert" aria-live="assertive" aria-atomic="true">
-                <div class="toast-header">
-                    <svg class="bd-placeholder-img rounded mr-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="${type == 1 ? '#ff0000' : (type == 2 ? '#31a66a' : '#007aff')}" /></svg>
-                    <strong class="mr-auto">Notification</strong>
-                    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="toast-body">
-                    ${msg}
-            </div>
-            </div>`);
-            $(`#t${ti - 1}`).toast({
-                delay: 5500
-            });
-            $(`#t${ti - 1}`).toast('show');
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         var type = 1;
         function val1(x, ele) {
             $(".line-btn button").removeClass("active");
             $(ele).addClass("active");
-            console.log(ele,$(ele) );
+            console.log(ele, $(ele));
 
             type = x;
             if (posprev == null || posnext == null)
@@ -198,13 +128,10 @@
             canvas.width = $("#diagram2").width();
             canvas.height = $("#diagram2").height();
         }
-
         //add disabled class
-
         function hasClass(ele, cls) {
             return !!ele.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
         }
-
         function addClass(ele, cls) {
             if (!hasClass(ele, cls)) ele.className += " " + cls;
         }
@@ -269,7 +196,6 @@
                     ctx.moveTo(posprev.x, posprev.y);
                     ctx.lineTo(posnext.x, posnext.y);
                     ctx.stroke();
-                    // canvas.disabled = true;
                     addClass(canvas, "out1");
                     dist = Math.sqrt(Math.pow((-posprev.x + posnext.x), 2) + Math.pow((posprev.y - posnext.y), 2))
                 }
@@ -277,7 +203,6 @@
                 console.log(dist);
             }
         }
-
         const typeSpeed = 30;
         var timerId, typeTarget = $("#typer");
         function type(txt, cur = 0) {
@@ -292,13 +217,10 @@
             typeTarget.append(txt.charAt(cur));
             timerId = setTimeout(type, typeSpeed, txt, cur + 1);
         }
-
-        // type("this is test")
         function fon() {
             document.getElementById("planeb").disabled = false;
             document.getElementById("dottedb").disabled = false;
             document.getElementById("dashedb").disabled = false;
-
             document.getElementById("diagram").src = "./images/sem.gif";
             document.getElementById("diagram2").onload = function () {
                 canvas.width = $("#diagram2").width();
@@ -307,9 +229,7 @@
             }
             setTimeout(() => {
                 document.getElementById("diagram2").src = "./images/slide18.jpg";
-
             }, 8700);
-            // document.getElementById("load").disabled = true;
             document.getElementById("mag").disabled = false;
             document.getElementById("imgblur").disabled = false;
             document.getElementById("clight").disabled = false;
@@ -321,11 +241,9 @@
         function Contrast() {
             var v = document.getElementById("diagram2");
             v.style["filter"] = "contrast(" + document.getElementById("clight").value + ") blur(" + document.getElementById("imgblur").value + "px)";
-
         }
         var val = 1;
         function changeImage(value) {
-
             val = value;
             if (value == 1) {
                 document.getElementById("diagram2").src = "./images/slide18.jpg";
@@ -345,69 +263,49 @@
             if (value == 6) {
                 document.getElementById("diagram2").src = "./images/slide23.jpg";
             }
-
         }
-        // console.log("typetjhis")
         function checksize() {
-
             console.log("typetjhis", val);
-
             if (val == 1) {
                 var x = Math.round(100 / 30) * dist;
-                x = Math.round(x,2);
+                x = Math.round(x, 2);
                 document.getElementById("output").innerHTML = x;
                 console.log(x);
             }
             if (val == 2) {
                 var x = (50 / 72) * dist;
-                x = Math.round(x,2);
+                x = Math.round(x, 2);
                 document.getElementById("output").innerHTML = x;
                 console.log(x);
             }
             if (val == 3) {
                 var x = (10 / 28) * dist;
-                x = Math.round(x,2);
+                x = Math.round(x, 2);
                 document.getElementById("output").innerHTML = x;
                 console.log(x);
-
             }
             if (val == 4) {
                 var x = (5 / 44) * dist;
                 x = Math.round(x);
                 document.getElementById("output").innerHTML = x;
                 console.log(x);
-
             }
             if (val == 5) {
                 var x = (5 / 74) * dist;
                 x = Math.round(x);
                 document.getElementById("output").innerHTML = x;
                 console.log(x);
-
             }
             if (val == 6) {
                 var x = (2 / 43) * dist;
                 x = Math.round(x);
-
                 document.getElementById("output").innerHTML = x;
                 console.log(x);
-
             }
-
-
         }
         $(function () {
             preload(["./images/sem.gif"])
         });
-        // if(val==2){
-        //     var x=(50/72)*dist;
-
-        //     documeny.getElementById("output").innerHTML=x;
-        //     console.log(x);
-
-        // }
-
-
     </script>
 </body>
 
