@@ -53,7 +53,7 @@ function removeClass(ele, cls) {
         ele.className = ele.className.replace(reg, ' ');
     }
 }
-addClass(document.getElementById("mag"), "out");
+// addClass(document.getElementById("mag"), "out");
 addClass(document.getElementById("imgblur"), "out");
 addClass(document.getElementById("clight"), "out");
 //put this outside the event loop..
@@ -129,9 +129,11 @@ function type(txt, cur = 0) {
     timerId = setTimeout(type, typeSpeed, txt, cur + 1);
 }
 function fon() {
-    document.getElementById("planeb").disabled = false;
-    document.getElementById("dottedb").disabled = false;
-    document.getElementById("dashedb").disabled = false;
+    var elems = document.getElementsByClassName("loadEnable");
+    for (var i = 0; i < elems.length; i++) {
+        elems[i].disabled = false;
+    }
+
     document.getElementById("diagram").src = "./images/sem.gif";
     document.getElementById("diagram2").onload = function () {
         canvas.width = $("#diagram2").width();
@@ -139,9 +141,9 @@ function fon() {
         console.log("setting");
     }
     setTimeout(() => {
-        document.getElementById("diagram2").src = "./images/slide18.jpg";
+        document.getElementById("diagram2").src = "./images/100.jpg";
     }, 8700);
-    document.getElementById("mag").disabled = false;
+    // document.getElementById("mag").disabled = false;
     document.getElementById("imgblur").disabled = false;
     document.getElementById("clight").disabled = false;
 }
@@ -155,25 +157,34 @@ function Contrast() {
 }
 var val = 1;
 function changeImage(value) {
+    console.log(value);
     val = value;
     if (value == 1) {
-        document.getElementById("diagram2").src = "./images/slide18.jpg";
+        document.getElementById("diagram2").src = "./images/100.jpg";
     }
     if (value == 2) {
-        document.getElementById("diagram2").src = "./images/slide19.jpg";
+        document.getElementById("diagram2").src = "./images/50.jpg";
     }
     if (value == 3) {
-        document.getElementById("diagram2").src = "./images/slide20.jpg";
+        document.getElementById("diagram2").src = "./images/10.jpg";
     }
     if (value == 4) {
-        document.getElementById("diagram2").src = "./images/slide21.jpg";
+        document.getElementById("diagram2").src = "./images/5.jpg";
     }
     if (value == 5) {
-        document.getElementById("diagram2").src = "./images/slide22.jpg";
+        document.getElementById("diagram2").src = "./images/2.jpg";
     }
-    if (value == 6) {
-        document.getElementById("diagram2").src = "./images/slide23.jpg";
+}
+
+
+function calibrate() {
+    var elems = document.getElementsByClassName("loadEnable");
+    for (var i = 0; i < elems.length; i++) {
+        elems[i].disabled = true;
     }
+    document.getElementById("planeb").disabled = false;
+    document.getElementById("dottedb").disabled = false;
+    document.getElementById("dashedb").disabled = false;
 }
 function checksize() {
     console.log("typetjhis", val);
@@ -186,31 +197,31 @@ function checksize() {
     if (val == 2) {
         var x = (50 / 72) * dist;
         x = Math.round(x, 2);
-        document.getElementById("output").innerHTML = x+ "μm";
+        document.getElementById("output").innerHTML = x + "μm";
         console.log(x);
     }
     if (val == 3) {
         var x = (10 / 28) * dist;
         x = Math.round(x, 2);
-        document.getElementById("output").innerHTML = x+ "μm";
+        document.getElementById("output").innerHTML = x + "μm";
         console.log(x);
     }
     if (val == 4) {
         var x = (5 / 44) * dist;
         x = Math.round(x);
-        document.getElementById("output").innerHTML = x+ "μm";
+        document.getElementById("output").innerHTML = x + "μm";
         console.log(x);
     }
+    // if (val == 5) {
+    //     var x = (5 / 74) * dist;
+    //     x = Math.round(x);
+    //     document.getElementById("output").innerHTML = x+ "μm";
+    //     console.log(x);
+    // }
     if (val == 5) {
-        var x = (5 / 74) * dist;
-        x = Math.round(x);
-        document.getElementById("output").innerHTML = x+ "μm";
-        console.log(x);
-    }
-    if (val == 6) {
         var x = (2 / 43) * dist;
         x = Math.round(x);
-        document.getElementById("output").innerHTML = x+ "μm";
+        document.getElementById("output").innerHTML = x + "μm";
         console.log(x);
     }
 }
