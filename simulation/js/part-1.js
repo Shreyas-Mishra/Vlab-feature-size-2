@@ -77,7 +77,7 @@ function butClick(butVal, ele) {
 function verify() {
     var count = 0;
     if (modeVar === 1) {
-        var arrpoint = [1, 1, 0, 0, 0, 0, 1, 1];
+        var arrpoint = [0, 0, 1, 1, 1, 1, 0, 0];
     }
     else {
         var arrpoint = [1, 1, 0, 0, 1, 1, 0, 0];
