@@ -133,7 +133,7 @@ function fon() {
     for (var i = 0; i < elems.length; i++) {
         elems[i].disabled = false;
     }
-
+document.getElementById("load").disabled = true;
     document.getElementById("diagram").src = "./images/sem.gif";
     document.getElementById("diagram2").onload = function () {
         canvas.width = $("#diagram2").width();

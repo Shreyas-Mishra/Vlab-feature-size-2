@@ -30,40 +30,99 @@
                 <!-- Part -2  -->
 
                 <div class="panel padd" id="part-1">
+                    <p>Choose the mode:</p>
+                    <div class="row line-btn">
+                        <button class="but sm col-5 mod" id="se" mode="1" onclick="modeSel(1,this)">SE</button>
+                        <div class="col-2"></div>
+                        <button class="but sm col-5 mod" id="bse" mode="2" onclick="modeSel(2,this)">BSE</button>
+
+                    </div>
+                    <br>
+                    <button type="button" id="load1" class="but sm w-100 blue" onclick="load1()" disabled>Load
+                        Sample</button>
+
+                    <div class="form-group mt-3">
+                        <label for="formControlRange">Focus<br></label>
+                        <input type="range" min="0" max="20" value="5" class="slider" id="imgblur1"
+                            onchange="editImage1(this.value)" disabled>
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="formControlRange">Contrast</label>
+                        <input type="range" min="0" max="20" value="5" class="slider" id="clight1"
+                            onchange="Contrast1(this.value)" disabled>
+                    </div>
+                    <button class="but sm blue w-100" id="calBut" onclick="calibrate1()" disabled>Calibrate the
+                        Image</button>
+                    <br>
+                    <br>
+                    <p id="ModeLine">&nbsp;</p>
+                    <table class="table-responsive table-striped">
+                        <tbody>
+                            <tr>
+                                <td><button class="button  point" onclick="butClick(0,this)" disabled>&nbsp;a&nbsp;</button></td>
+                                <td><button class="button  point" onclick="butClick(1,this)" disabled>&nbsp;b&nbsp;</button></td>
+                                <td><button class="button  point" onclick="butClick(2,this)" disabled>&nbsp;c&nbsp;</button></td>
+                                <td><button class="button  point" onclick="butClick(3,this)" disabled>&nbsp;d&nbsp;</button></td>
+                                <td><button class="button  point" onclick="butClick(4,this)" disabled>&nbsp;e&nbsp;</button></td>
+                                <td><button class="button  point" onclick="butClick(5,this)" disabled>&nbsp;f&nbsp;</button></td>
+                                <td><button class="button  point" onclick="butClick(6,this)" disabled>&nbsp;g&nbsp;</button></td>
+                                <td><button class="button  point" onclick="butClick(7,this)" disabled>&nbsp;h&nbsp;</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <button id="butVerify" class="but blue col-4" onclick="verify()" disabled>Verify</button>
+                        <div class="col-2"></div>
+                        <button id="butCheck" class="but blue col-4" onclick="checkAns()" disabled>Check Answer</button>
+                        <p id="Answer"></p>
+                    </div>
+                    <button type="button" class="but w-100 blue" onclick="location.reload();">Restart</button>
 
                 </div>
+
+
+
+
+
+
+
+
+
+
+
 
                 <!-- Part -2  -->
                 <div class="panel padd" id=part-2>
                     <button type="button" id=load class="but sm w-100 blue" onclick="fon()">Load Sample</button>
-
                     <div class="form-group mt-3">
                         <label for="formControlRange">Magnification</label>
                         <!-- <input type="range" min="1" max="6" value="1" class="slider" id="mag"> -->
                         <form id="radio">
                             <div class="form-check form-check-inline">
-                                <input class="loadEnable form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                    value="1" onclick="changeImage(this.value)" disabled>
+                                <input class="loadEnable form-check-input" type="radio" name="inlineRadioOptions"
+                                    id="inlineRadio1" value="1" onclick="changeImage(this.value)" disabled>
                                 <label class="form-check-label" for="inlineRadio1">100 μm</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="loadEnable form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                    value="2" onclick="changeImage(this.value)" disabled>
+                                <input class="loadEnable form-check-input" type="radio" name="inlineRadioOptions"
+                                    id="inlineRadio1" value="2" onclick="changeImage(this.value)" disabled>
                                 <label class="form-check-label" for="inlineRadio1">50 μm</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="loadEnable form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                    value="3" onclick="changeImage(this.value)" disabled>
+                                <input class="loadEnable form-check-input" type="radio" name="inlineRadioOptions"
+                                    id="inlineRadio1" value="3" onclick="changeImage(this.value)" disabled>
                                 <label class="form-check-label" for="inlineRadio1">10 μm</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="loadEnable form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                    value="4" onclick="changeImage(this.value)" disabled>
+                                <input class="loadEnable form-check-input" type="radio" name="inlineRadioOptions"
+                                    id="inlineRadio1" value="4" onclick="changeImage(this.value)" disabled>
                                 <label class="form-check-label" for="inlineRadio1">5 μm</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="loadEnable form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                    value="5" onclick="changeImage(this.value)" disabled>
+                                <input class="loadEnable form-check-input" type="radio" name="inlineRadioOptions"
+                                    id="inlineRadio1" value="5" onclick="changeImage(this.value)" disabled>
                                 <label class="form-check-label" for="inlineRadio1">2 μm</label>
                             </div>
                         </form>
@@ -80,15 +139,11 @@
                         <input type="range" min="0" max="10" value="5" class="loadEnable slider" id="clight"
                             onchange="Contrast(this.value)" disabled>
                     </div>
-                    <button class="but sm blue w-100 loadEnable" onclick="calibrate()" disabled>Calibrate the Image</button>
+                    <button class="but sm blue w-100 loadEnable" onclick="calibrate()" disabled>Calibrate the
+                        Image</button>
                     <br>
                     <br>
-
-
-
-
-
-
+                    <p>Select the type of line and then click the two end point of the line.</p>
 
                     <div class="row line-btn">
                         <button id=planeb class="but col-4 line" onclick="val1(1, this),drawl()" disabled>
@@ -113,6 +168,24 @@
                     <button type="button" class="but w-100 blue" onclick="location.reload();">Restart</button>
                 </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 <!-- Part -3  -->
 
             </div>
@@ -125,6 +198,8 @@
             <div class="col-6">
                 <div class="panel  padd">
                     <img id="diagram2" src="./images/sample.jpg" style="height: 590px;">
+                    <img id="modeImage" src="./images/bse-layout.png" style="height: 607px;position: absolute;
+                    transform: translateX(-51%);position:absolute;left: 50%;width: 87%;top: -1%;display: none;">
                     <canvas style="transform:translateX(-50%);position:absolute;left:50%;" onclick="draw(event)"
                         id="myCanvas" width=50 height=50></canvas>
                 </div>
@@ -136,6 +211,7 @@
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/zoom.js"></script>
     <script src="./js/main.js"></script>
+    <script src="./js/part-1.js"></script>
     <script>
 
         function first() {

@@ -73,7 +73,17 @@ a {
   height: 11rem;
 }
 
+#part-1
+{
+  display: none;
+}
+
 #part-2
+{
+  display: none;
+}
+
+#part-3
 {
   display: none;
 }
@@ -270,4 +280,8 @@ text-align: center;
 }
 .line-btn button.active {
   background:lightgreen;
+}
+.active1{
+  background:lightgreen;
+
 }
