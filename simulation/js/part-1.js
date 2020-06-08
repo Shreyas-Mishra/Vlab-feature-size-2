@@ -99,7 +99,7 @@ function verify() {
 }
 function checkAns() {
     if(modeVar === 1){
-        document.getElementById("Answer").innerHTML = "Porosity is present at the points A , B, G and H ";
+        document.getElementById("Answer").innerHTML = "Porosity is present at the points C , D, E and F ";
 
     }
     else{

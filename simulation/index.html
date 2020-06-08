@@ -59,14 +59,22 @@
                     <table class="table-responsive table-striped">
                         <tbody>
                             <tr>
-                                <td><button class="button  point" onclick="butClick(0,this)" disabled>&nbsp;a&nbsp;</button></td>
-                                <td><button class="button  point" onclick="butClick(1,this)" disabled>&nbsp;b&nbsp;</button></td>
-                                <td><button class="button  point" onclick="butClick(2,this)" disabled>&nbsp;c&nbsp;</button></td>
-                                <td><button class="button  point" onclick="butClick(3,this)" disabled>&nbsp;d&nbsp;</button></td>
-                                <td><button class="button  point" onclick="butClick(4,this)" disabled>&nbsp;e&nbsp;</button></td>
-                                <td><button class="button  point" onclick="butClick(5,this)" disabled>&nbsp;f&nbsp;</button></td>
-                                <td><button class="button  point" onclick="butClick(6,this)" disabled>&nbsp;g&nbsp;</button></td>
-                                <td><button class="button  point" onclick="butClick(7,this)" disabled>&nbsp;h&nbsp;</button></td>
+                                <td><button class="button  point" onclick="butClick(0,this)"
+                                        disabled>&nbsp;a&nbsp;</button></td>
+                                <td><button class="button  point" onclick="butClick(1,this)"
+                                        disabled>&nbsp;b&nbsp;</button></td>
+                                <td><button class="button  point" onclick="butClick(2,this)"
+                                        disabled>&nbsp;c&nbsp;</button></td>
+                                <td><button class="button  point" onclick="butClick(3,this)"
+                                        disabled>&nbsp;d&nbsp;</button></td>
+                                <td><button class="button  point" onclick="butClick(4,this)"
+                                        disabled>&nbsp;e&nbsp;</button></td>
+                                <td><button class="button  point" onclick="butClick(5,this)"
+                                        disabled>&nbsp;f&nbsp;</button></td>
+                                <td><button class="button  point" onclick="butClick(6,this)"
+                                        disabled>&nbsp;g&nbsp;</button></td>
+                                <td><button class="button  point" onclick="butClick(7,this)"
+                                        disabled>&nbsp;h&nbsp;</button></td>
                             </tr>
                         </tbody>
                     </table>
@@ -77,22 +85,10 @@
                         <div class="col-2"></div>
                         <button id="butCheck" class="but blue col-4" onclick="checkAns()" disabled>Check Answer</button>
                         <p id="Answer"></p>
-                    </div>
+                    </div><br>
                     <button type="button" class="but w-100 blue" onclick="location.reload();">Restart</button>
 
                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
                 <!-- Part -2  -->
                 <div class="panel padd" id=part-2>
                     <button type="button" id=load class="but sm w-100 blue" onclick="fon()">Load Sample</button>
@@ -164,6 +160,7 @@
                     <center>
                         <div style="border-radius:15px;border:1px solid black;width: 90px;height: 30px;background-color: rgba(5, 3, 0, 0.322);font-size: large;"
                             id="output">&nbsp;Size</div>
+
                     </center>
                     <button type="button" class="but w-100 blue" onclick="location.reload();">Restart</button>
                 </div>
@@ -219,7 +216,7 @@
             document.getElementById("first").style.display = "none";
             document.getElementById("third").style.display = "none";
             document.getElementById("sec").style.display = "none";
-            document.getElementById("typer").innerHTML = "1. First instruction <br>2. Second <br> 3. Third";
+            document.getElementById("typer").innerHTML = "1. Choose the mode <br>2. Load the sample <br> 3. Set Focus and Saturation <br> 4. Calibrate the image<br> 5. Click on the points according to mode selected <br>6. Verify your answer.";
             document.getElementById("part-1").style.display = "block";
         }
 
