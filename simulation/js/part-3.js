@@ -28,6 +28,9 @@ function Contrast3() {
 var imgArray = new Array();
 var valueArr = new Array();
 var pointsArr = new Array();
+// var idArr = new Array();
+var idArr = ["n0" ,"n1","n2" , "n3", "n4" , "n5" ,"n6" ,"n7" , "n8","n9" ,"n10" ,"n11" , "n12","n13" ,"n14" ,"n15" ,"n16", "n17", "n18",
+"n19", "n20","n21" , "n22","n23" ,"n24" ,"n25" ,"n26", "n27", "n28","n29", "n30"];
 
 imgArray[0] = new Image();
 imgArray[0].src = 'images/g1.png';
@@ -53,13 +56,13 @@ imgArray[6].src = 'images/g7.png';
 imgArray[7] = new Image();
 imgArray[7].src = 'images/g8.png';
 
-var imgVar; 
+var imgVar;
 
 
 function calibrate3() {
 
     imgVar = Math.floor(Math.random() * 9);
-    
+
     document.getElementById("modeImage").src = imgArray[imgVar].src;
     document.getElementById("modeImage").style.display = "block";
 
@@ -72,19 +75,19 @@ function calibrate3() {
 var j = 25;
 var k = 0;
 function createNewElement() {
-    
-    var x = document.getElementById("newInputBox").value;
+    // idArr [k] = ("n"+ k);
+    var x = 6;
+    x = document.getElementById("n" + k).value;
     valueArr[k] = x;
     pointsArr[k] = j;
+    console.log(valueArr, pointsArr,idArr);
     k++;
+
     var txtNewInputBox = document.createElement('div');
-    j+=25;
-
-
+    j += 25;
     // Then add the content (a new input box) of the element.
-	txtNewInputBox.innerHTML = "<input type='number' style='width: 3rem;' value='' id='newInputBox'><br/> Total Points = "+ j;
+    txtNewInputBox.innerHTML = "<input type='number' style='width: 3rem;' value='0' id='" + idArr[k] + "'><br/> Total Points = " + j;
 
     // Finally put it where it is supposed to appear.
     document.getElementById("newElementId").appendChild(txtNewInputBox);
-    console.log(valueArr , pointsArr);
 }
