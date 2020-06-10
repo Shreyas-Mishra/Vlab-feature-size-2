@@ -39,7 +39,7 @@
                         <div class="col-1"></div>
 
                     </div>
-                    
+
                     <button type="button" id="load1" class="but sm w-100 blue" onclick="load1()" disabled>Load
                         Sample</button>
 
@@ -50,7 +50,7 @@
                     </div>
                     <div class="form-group mt-3">
                         <label for="formControlRange">Contrast</label>
-                        <input type="range" min="0" max="20" value="5" class="slider" id="clight1"
+                        <input type="range" min="1" max="20" value="5" class="slider" id="clight1"
                             onchange="Contrast1(this.value)" disabled>
                     </div>
                     <button class="but sm blue w-100" id="calBut" onclick="calibrate1()" disabled>Calibrate the
@@ -90,7 +90,7 @@
 
                 </div>
 
-                
+
                 <!-- Part -2  -->
 
 
@@ -136,7 +136,7 @@
                     </div>
                     <div class="form-group mt-3">
                         <label for="formControlRange">Contrast</label>
-                        <input type="range" min="0" max="10" value="5" class="loadEnable slider" id="clight"
+                        <input type="range" min="1" max="10" value="5" class="loadEnable slider" id="clight"
                             onchange="Contrast(this.value)" disabled>
                     </div>
                     <button class="but sm blue w-100 loadEnable" onclick="calibrate()" disabled>Calibrate the
@@ -168,24 +168,58 @@
                 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 <!-- Part -3  -->
+                <div class="panel padd" id="part-3">
+
+                    <button type="button" id="load3" class="but sm w-100 blue" onclick="load3()">Load
+                        Sample</button>
+
+                    <div class="form-group mt-3">
+                        <label for="formControlRange">Focus<br></label>
+                        <input type="range" min="0" max="20" value="5" class="slider" id="imgblur3"
+                            onchange="editImage3(this.value)" disabled>
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="formControlRange">Contrast</label>
+                        <input type="range" min="1" max="20" value="5" class="slider" id="clight3"
+                            onchange="Contrast3(this.value)" disabled>
+                    </div>
+                    <button class="but sm blue w-100" id="calBut3" onclick="calibrate3()" disabled>Calibrate the
+                        Image</button>
+                    <br>
+
+
+
+                    
+
+                    <div id="newElementId">Enter the number of points coinciding with the points on the grid (25 points) :
+                        <div>
+                            <input type="number" style="width: 3rem;" id="newInputBox" value="10"><br/> Total Points = 25;
+                        </div>
+                    </div>
+
+                    <div id="dynamicCheck">
+                        <input type="button" value="Add Value" onclick="createNewElement();" />
+                    </div>
+
+
+
+
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <button id="butCheck3" class="but blue col-4" onclick="checkAns3()" disabled>Check
+                            Answer</button>
+                        <div class="col-2"></div>
+                        <button id="butVerify3" class="but blue col-4" onclick="verify3()" disabled>Verify</button>
+                        <p id="Answer"></p>
+                    </div>
+                    <button type="button" class="but w-100 blue" onclick="location.reload();">Restart</button>
+
+                </div>
+
+
+
+
 
             </div>
             <div class="col-3">
@@ -211,6 +245,7 @@
     <script src="./js/zoom.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/part-1.js"></script>
+    <script src="./js/part-3.js"></script>
     <script>
 
         function first() {
