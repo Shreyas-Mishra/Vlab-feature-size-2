@@ -53,10 +53,10 @@ function removeClass(ele, cls) {
         ele.className = ele.className.replace(reg, ' ');
     }
 }
-// addClass(document.getElementById("mag"), "out");
-addClass(document.getElementById("imgblur"), "out");
-addClass(document.getElementById("clight"), "out");
-//put this outside the event loop..
+ // addClass(document.getElementById("mag"), "out");
+// addClass(document.getElementById("imgblur"), "out");
+// addClass(document.getElementById("clight"), "out");
+//put this outside the event loop...
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 var temp = 0, flag = 0;

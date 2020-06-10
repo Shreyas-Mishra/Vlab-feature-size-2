@@ -2,7 +2,7 @@
 html {
   font-size: 14px;
 }
-.out {
+.slider:disabled:hover {
 
   cursor: not-allowed !important;
 }
@@ -25,7 +25,7 @@ p {
 .panel img {
   width: 100%;
 }
-.out1 {
+.slider:disabled:hover {
   cursor: not-allowed !important;
 }
 
