@@ -75,6 +75,9 @@ function calibrate3() {
 var j = 25;
 var k = 0;
 function createNewElement() {
+    imgVar = Math.floor(Math.random() * 9);
+
+    document.getElementById("modeImage").src = imgArray[imgVar].src;
     // idArr [k] = ("n"+ k);
     var x = 6;
     x = document.getElementById("n" + k).value;
