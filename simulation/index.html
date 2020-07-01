@@ -103,27 +103,22 @@
                             <div class="form-check form-check-inline">
                                 <input class="loadEnable form-check-input" type="radio" name="inlineRadioOptions"
                                     id="inlineRadio1" value="1" onclick="changeImage(this.value)" disabled>
-                                <label class="form-check-label" for="inlineRadio1">100 μm</label>
+                                <label class="form-check-label" for="inlineRadio1">500 X</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="loadEnable form-check-input" type="radio" name="inlineRadioOptions"
                                     id="inlineRadio1" value="2" onclick="changeImage(this.value)" disabled>
-                                <label class="form-check-label" for="inlineRadio1">50 μm</label>
+                                <label class="form-check-label" for="inlineRadio1">1000 X</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="loadEnable form-check-input" type="radio" name="inlineRadioOptions"
                                     id="inlineRadio1" value="3" onclick="changeImage(this.value)" disabled>
-                                <label class="form-check-label" for="inlineRadio1">10 μm</label>
+                                <label class="form-check-label" for="inlineRadio1">2500 X</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="loadEnable form-check-input" type="radio" name="inlineRadioOptions"
                                     id="inlineRadio1" value="4" onclick="changeImage(this.value)" disabled>
-                                <label class="form-check-label" for="inlineRadio1">5 μm</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="loadEnable form-check-input" type="radio" name="inlineRadioOptions"
-                                    id="inlineRadio1" value="5" onclick="changeImage(this.value)" disabled>
-                                <label class="form-check-label" for="inlineRadio1">2 μm</label>
+                                <label class="form-check-label" for="inlineRadio1">5000 X</label>
                             </div>
                         </form>
 
@@ -156,13 +151,18 @@
                         </button>
                     </div>
                     <br>
-                    <button id="checksizeb" type="button" class="but sm w-100 blue" onclick="checksize()" disabled>Check
-                        Size</button>
-                    <br>
                     <center>
-                        <div style="border-radius:15px;border:1px solid black;width: 90px;height: 30px;background-color: rgba(5, 3, 0, 0.322);font-size: large;"
+                        Enter the measured size here
+                        <input
+                            style="border-radius:15px;border:1px solid black;width: 120px;height: 30px;background-color: rgba(5, 3, 0, 0.322);font-size: large;"
+                            type="number" id="fname" name="size">
+                        <br>
+                        <button id="checksizeb" type="button" class="but sm w-100 blue" onclick="checksize()"
+                            disabled>Check
+                            Size</button>
+                        <br>
+                        <div style="border-radius:15px;border:1px solid black;width: 120px;height: 30px;background-color: rgba(5, 3, 0, 0.322);font-size: large;"
                             id="output">&nbsp;Size</div>
-
                     </center>
                     <button type="button" class="but w-100 blue" onclick="location.reload();">Restart</button>
                 </div>
@@ -190,11 +190,12 @@
 
 
 
-                    
 
-                    <div id="newElementId">Enter the number of points coinciding with the points on the grid (25 points) :
+
+                    <div id="newElementId">Enter the number of points coinciding with the points on the grid (25 points)
+                        :
                         <div>
-                            <input type="number" style="width: 3rem;" id="n0" value=10><br/> Total Points = 25;
+                            <input type="number" style="width: 3rem;" id="n0" value=10><br /> Total Points = 25;
                         </div>
                     </div>
 
