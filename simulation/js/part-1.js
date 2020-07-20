@@ -22,8 +22,10 @@ function load1() {
     document.getElementById("se").disabled = true;
     document.getElementById("bse").disabled = true;
     document.getElementById("load1").disabled = true;
-
-    document.getElementById("diagram").src = "./images/sem.gif";
+    if (modeVar === 1)
+        document.getElementById("diagram").src = "./images/se-gif.gif";
+    else
+        document.getElementById("diagram").src = "./images/bse-gif.gif";
     document.getElementById("diagram2").onload = function () {
         canvas.width = $("#diagram2").width();
         canvas.height = $("#diagram2").height();
@@ -35,7 +37,7 @@ function load1() {
         else
             document.getElementById("diagram2").src = "./images/bse.jpg";
 
-    }, 8700);
+    }, 11200);
     document.getElementById("imgblur1").disabled = false;
     document.getElementById("clight1").disabled = false;
     document.getElementById("calBut").disabled = false;
@@ -46,7 +48,7 @@ function calibrate1() {
         document.getElementById("modeImage").src = "./images/se-layout.png";
         document.getElementById("modeImage").style.display = "block";
         document.getElementById("ModeLine").innerHTML = "Click on the buttons below corresponding to the points where you identify porosity on image.";
-        
+
     }
     else {
         document.getElementById("modeImage").src = "./images/bse-layout.png";
@@ -98,11 +100,11 @@ function verify() {
 
 }
 function checkAns() {
-    if(modeVar === 1){
+    if (modeVar === 1) {
         document.getElementById("Answer").innerHTML = "Porosity is present at the points C , D, E and F ";
 
     }
-    else{
+    else {
         document.getElementById("Answer").innerHTML = "Reinforcement is present at the points A , B, E and F ";
 
     }
