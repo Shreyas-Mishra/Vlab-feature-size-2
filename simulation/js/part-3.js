@@ -1,7 +1,7 @@
 function load3() {
 
     document.getElementById("load3").disabled = true;
-    document.getElementById("diagram").src = "./images/sem.gif";
+    document.getElementById("diagram").src = "./images/se-gif.gif";
     document.getElementById("diagram2").onload = function () {
         canvas.width = $("#diagram2").width();
         canvas.height = $("#diagram2").height();
@@ -10,7 +10,7 @@ function load3() {
     setTimeout(() => {
         document.getElementById("diagram2").src = "./images/bse.jpg";
 
-    }, 8700);
+    }, 11200);
     document.getElementById("imgblur3").disabled = false;
     document.getElementById("clight3").disabled = false;
     document.getElementById("calBut3").disabled = false;
@@ -29,8 +29,8 @@ var imgArray = new Array();
 var valueArr = new Array();
 var pointsArr = new Array();
 // var idArr = new Array();
-var idArr = ["n0" ,"n1","n2" , "n3", "n4" , "n5" ,"n6" ,"n7" , "n8","n9" ,"n10" ,"n11" , "n12","n13" ,"n14" ,"n15" ,"n16", "n17", "n18",
-"n19", "n20","n21" , "n22","n23" ,"n24" ,"n25" ,"n26", "n27", "n28","n29", "n30"];
+var idArr = ["n0", "n1", "n2", "n3", "n4", "n5", "n6", "n7", "n8", "n9", "n10", "n11", "n12", "n13", "n14", "n15", "n16", "n17", "n18",
+    "n19", "n20", "n21", "n22", "n23", "n24", "n25", "n26", "n27", "n28", "n29", "n30"];
 
 imgArray[0] = new Image();
 imgArray[0].src = 'images/g1.png';
@@ -65,32 +65,64 @@ function calibrate3() {
 
     document.getElementById("modeImage").src = imgArray[imgVar].src;
     document.getElementById("modeImage").style.display = "block";
-
     document.getElementById("imgblur3").disabled = true;
     document.getElementById("clight3").disabled = true;
-    // document.getElementById("calBut3").disabled = true;
-    document.getElementById("butVerify3").disabled = false;
-    document.getElementById("butCheck3").disabled = false;
 }
 var j = 25;
 var k = 0;
 function createNewElement() {
     imgVar = Math.floor(Math.random() * 9);
-
     document.getElementById("modeImage").src = imgArray[imgVar].src;
-    // idArr [k] = ("n"+ k);
+    document.getElementById("butCheck3").disabled = false;
+    document.getElementById("p3-name").value = '';
+    document.getElementById("p3-name").style.display = "block";
+    document.getElementById("ans-3").style.display = "block";
+
     var x = 6;
+
     x = document.getElementById("n" + k).value;
-    valueArr[k] = x;
+
+    valueArr[k] = parseInt(x);
+
     pointsArr[k] = j;
-    console.log(valueArr, pointsArr,idArr);
+
+    console.log(valueArr, pointsArr, idArr);
+
     k++;
 
     var txtNewInputBox = document.createElement('div');
+
     j += 25;
+
     // Then add the content (a new input box) of the element.
-    txtNewInputBox.innerHTML = "<input type='number' style='width: 3rem;' value='0' id='" + idArr[k] + "'><br/> Total Points = " + j;
+
+    txtNewInputBox.innerHTML = "<input type='number' style='width: 3rem;' value='0' id='" + idArr[k] + "'> Total Points = " + j;
 
     // Finally put it where it is supposed to appear.
+
     document.getElementById("newElementId").appendChild(txtNewInputBox);
+}
+function checkAns3() {
+
+    document.getElementById("cor-ans-3").style.display = "block";
+
+    var last_element = pointsArr[pointsArr.length - 1];
+
+    console.log(last_element);
+
+    // Getting sum of numbers
+
+
+    var sumvalueArr = valueArr.reduce(function (a, b) {
+        return a + b;
+    }, 0);
+
+    console.log(sumvalueArr);
+
+    var ans = (sumvalueArr / last_element) * 100;
+
+    console.log(ans);
+
+    document.getElementById("cor-ans-3").innerHTML = "<strong>Expected Answer : " + ans + "%</strong><br/> Expected answer does not take last entered points in consideration.";
+
 }

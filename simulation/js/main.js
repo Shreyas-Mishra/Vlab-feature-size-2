@@ -134,7 +134,7 @@ function fon() {
         elems[i].disabled = false;
     }
     document.getElementById("load").disabled = true;
-    document.getElementById("diagram").src = "./images/sem.gif";
+    document.getElementById("diagram").src = "./images/se-gif.gif";
     document.getElementById("diagram2").onload = function () {
         canvas.width = $("#diagram2").width();
         canvas.height = $("#diagram2").height();
@@ -142,7 +142,7 @@ function fon() {
     }
     setTimeout(() => {
         document.getElementById("diagram2").src = "./images/500.jpg";
-    }, 8700);
+    }, 11200);
     // document.getElementById("mag").disabled = false;
     document.getElementById("imgblur").disabled = false;
     document.getElementById("clight").disabled = false;

@@ -82,7 +82,7 @@ function verify() {
         var arrpoint = [0, 0, 1, 1, 1, 1, 0, 0];
     }
     else {
-        var arrpoint = [1, 1, 0, 0, 1, 1, 0, 0];
+        var arrpoint = [1, 1, 0, 0, 1, 0, 0, 0];
     }
     for (var i = 0; i < 8; ++i) {
         if (arrpoint1[i] === arrpoint[i]) {
@@ -105,7 +105,7 @@ function checkAns() {
 
     }
     else {
-        document.getElementById("Answer").innerHTML = "Reinforcement is present at the points A , B, E and F ";
+        document.getElementById("Answer").innerHTML = "Reinforcement is present at the points A , B and E. ";
 
     }
 
