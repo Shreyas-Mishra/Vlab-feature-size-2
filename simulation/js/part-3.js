@@ -123,6 +123,6 @@ function checkAns3() {
 
     console.log(ans);
 
-    document.getElementById("cor-ans-3").innerHTML = "<strong>Expected Answer : " + ans + "%</strong><br/> Expected answer does not take last entered points in consideration.";
+    document.getElementById("cor-ans-3").innerHTML = "<strong>Expected Answer : " + ans;
 
 }
