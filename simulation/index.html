@@ -191,14 +191,32 @@
                     <button class="but sm blue w-100" id="calBut3" onclick="calibrate3()" disabled>Calibrate the
                         Image</button>
                     <br>
+                    Enter the number of points below that are coinciding with the grid points. Points in one grid=25.
+                    <br>
+                    <div class=" ml-1" id="">
+                        <input id="reading" value="0" style="width: 3rem;">
+                        &nbsp;&nbsp;
+                        <button id="n-read" class="but blue" onclick="NextRead()" disabled>Next Reading</button>
+                        <button id="s-read" class="but blue" onclick="Submit3()">Submit</button>
+                    </div>
+
+
+                    <br>
+                    <div>Enter your answer : <input id="ans3" value="0" style="width: 3rem;"></div>
+                    <button class="but blue" onclick="CheckAns3()">Check Answer</button>
+                    <br>
+                    <p>The expected answer is :<strong id="answer3"> </strong></p>
 
 
 
 
 
-                    <div id="newElementId">Enter the number of points coinciding with the points on the grid :
+
+
+
+                    <!-- <div id="newElementId">Enter the number of points coinciding with the points on the grid :
                         <div>
-                            <input type="number" style="width: 3rem;" id="n0" value=10> Total Points = 25;
+                            <input type="number" style="width: 3rem;" id="n0" value=0> Total Points = 25;
                         </div>
                     </div>
                     <div class="row">
@@ -222,7 +240,7 @@
 
                         <button id="butCheck3" class="but blue" onclick="checkAns3()" disabled>Check
                             Answer</button>
-                    </div>
+                    </div> -->
                     <button type="button" class="but w-100 blue" onclick="location.reload();">Restart</button>
 
                 </div>
@@ -281,7 +299,7 @@
             document.getElementById("first").style.display = "none";
             document.getElementById("third").style.display = "none";
             document.getElementById("sec").style.display = "none";
-            document.getElementById("typer").innerHTML = "1. Load the sample <br>2. Set the contrast and focus to appropriate level. <br> 3. Calibrate the image. <br>4. Follow the instructions given below and try to enter atleast 5 reading before final result.";
+            document.getElementById("typer").innerHTML = "1. Load the sample <br>2. Set the contrast and focus to appropriate level. <br> 3. Calibrate the image. <br>4. Follow the instructions given below and try to enter atleast 5 reading before final result.<br>5. Press {Next Reading} button to take more readings. <b>Please note the reading before pressing {Submit} button.</b>";
             document.getElementById("part-3").style.display = "block";
             document.getElementById("ans-3").style.display = "none";
             document.getElementById("cor-ans-3").style.display = "none";
