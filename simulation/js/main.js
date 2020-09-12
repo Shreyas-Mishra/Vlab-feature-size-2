@@ -90,19 +90,19 @@ function draw(evt) {
             flag = 0;
             console.log(type);
             if (type == 1) {
-                ctx.lineWidth = 5;
+                ctx.lineWidth = 3;
                 ctx.strokeStyle = "red";
             }
             if (type == 2) {
                 ctx.setLineDash([2, 2]);
                 ctx.strokeStyle = "red";
 
-                ctx.lineWidth = 5;
+                ctx.lineWidth = 3;
             }
             if (type == 3) {
 
                 ctx.setLineDash([10, 3]);
-                ctx.lineWidth = 5;
+                ctx.lineWidth = 3;
             }
             ctx.moveTo(posprev.x, posprev.y);
             ctx.lineTo(posnext.x, posnext.y);
@@ -183,48 +183,48 @@ function calibrate() {
     document.getElementById("dottedb").disabled = false;
     document.getElementById("dashedb").disabled = false;
 }
+// function checksize() {
+// }
 function checksize() {
     document.getElementById("output").innerHTML = "14.2 ± 5 µm";
+    console.log("typetjhis", val);
+    if (val == 1) {
+        var x = Math.round(100 / 30) * dist;
+        x = Math.round(x, 2);
+        document.getElementById("output1").innerHTML = x + "μm";
+        console.log(x);
+    }
+    if (val == 2) {
+        var x = (50 / 72) * dist;
+        x = Math.round(x, 2);
+        document.getElementById("output1").innerHTML = x + "μm";
+        console.log(x);
+    }
+    if (val == 3) {
+        var x = (10 / 28) * dist;
+        x = Math.round(x, 2);
+        document.getElementById("output1").innerHTML = x + "μm";
+        console.log(x);
+    }
+    if (val == 4) {
+        var x = (5 / 44) * dist;
+        x = Math.round(x);
+        document.getElementById("output1").innerHTML = x + "μm";
+        console.log(x);
+    }
+    // if (val == 5) {
+    //     var x = (5 / 74) * dist;
+    //     x = Math.round(x);
+    //     document.getElementById("output1").innerHTML = x+ "μm";
+    //     console.log(x);
+    // }
+    if (val == 5) {
+        var x = (2 / 43) * dist;
+        x = Math.round(x);
+        document.getElementById("output1").innerHTML = x + "μm";
+        console.log(x);
+    }
 }
-// function checksize() {
-//     console.log("typetjhis", val);
-//     if (val == 1) {
-//         var x = Math.round(100 / 30) * dist;
-//         x = Math.round(x, 2);
-//         document.getElementById("output").innerHTML = x + "μm";
-//         console.log(x);
-//     }
-//     if (val == 2) {
-//         var x = (50 / 72) * dist;
-//         x = Math.round(x, 2);
-//         document.getElementById("output").innerHTML = x + "μm";
-//         console.log(x);
-//     }
-//     if (val == 3) {
-//         var x = (10 / 28) * dist;
-//         x = Math.round(x, 2);
-//         document.getElementById("output").innerHTML = x + "μm";
-//         console.log(x);
-//     }
-//     if (val == 4) {
-//         var x = (5 / 44) * dist;
-//         x = Math.round(x);
-//         document.getElementById("output").innerHTML = x + "μm";
-//         console.log(x);
-//     }
-//     // if (val == 5) {
-//     //     var x = (5 / 74) * dist;
-//     //     x = Math.round(x);
-//     //     document.getElementById("output").innerHTML = x+ "μm";
-//     //     console.log(x);
-//     // }
-//     if (val == 5) {
-//         var x = (2 / 43) * dist;
-//         x = Math.round(x);
-//         document.getElementById("output").innerHTML = x + "μm";
-//         console.log(x);
-//     }
-// }
 $(function () {
     preload(["./images/sem.gif"])
 });

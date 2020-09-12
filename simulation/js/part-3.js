@@ -120,9 +120,9 @@ function checkAns3() {
     console.log(sumvalueArr);
 
     var ans = (sumvalueArr / last_element) * 100;
-
+    Math.round(ans);
     console.log(ans);
 
-    document.getElementById("cor-ans-3").innerHTML = "<strong>Expected Answer : " + ans;
+    document.getElementById("cor-ans-3").innerHTML = "<strong>Expected Answer : " + ans + "% (approx)";
 
 }
