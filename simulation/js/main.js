@@ -111,7 +111,7 @@ function draw(evt) {
             dist = Math.sqrt(Math.pow((-posprev.x + posnext.x), 2) + Math.pow((posprev.y - posnext.y), 2))
         }
         console.log(flag);
-        console.log(dist);
+        console.log("distance=" + dist);
     }
 }
 const typeSpeed = 30;
@@ -140,10 +140,11 @@ function fon() {
         canvas.height = $("#diagram2").height();
         console.log("setting");
     }
-    setTimeout(() => {
-        document.getElementById("diagram2").src = "./images/500.jpg";
-    }, 11200);
-    // document.getElementById("mag").disabled = false;
+    // setTimeout(() => {
+    //     document.getElementById("diagram2").src = "./images/500.jpg";
+    // }, 11200);
+    document.getElementById("diagram2").src = "./images/500.jpg";
+    document.getElementById("mag").disabled = false;
     document.getElementById("imgblur").disabled = false;
     document.getElementById("clight").disabled = false;
 }
@@ -189,19 +190,19 @@ function checksize() {
     document.getElementById("output").innerHTML = "14.2 ± 5 µm";
     console.log("typetjhis", val);
     if (val == 1) {
-        var x = Math.round(100 / 30) * dist;
+        var x = (20 / 15) * dist;
         x = Math.round(x, 2);
         document.getElementById("output1").innerHTML = x + "μm";
         console.log(x);
     }
     if (val == 2) {
-        var x = (50 / 72) * dist;
+        var x = (10 / 18) * dist;
         x = Math.round(x, 2);
         document.getElementById("output1").innerHTML = x + "μm";
         console.log(x);
     }
     if (val == 3) {
-        var x = (10 / 28) * dist;
+        var x = (10 / 43) * dist;
         x = Math.round(x, 2);
         document.getElementById("output1").innerHTML = x + "μm";
         console.log(x);
