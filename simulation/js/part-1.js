@@ -37,7 +37,7 @@ function load1() {
         else
             document.getElementById("diagram2").src = "./images/bse.jpg";
 
-    }, 11200);
+    }, 11800);
     document.getElementById("imgblur1").disabled = false;
     document.getElementById("clight1").disabled = false;
     document.getElementById("calBut").disabled = false;
