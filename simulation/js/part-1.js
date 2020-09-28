@@ -79,7 +79,7 @@ function butClick(butVal, ele) {
 function verify() {
     var count = 0;
     if (modeVar === 1) {
-        var arrpoint = [0, 0, 1, 1, 1, 1, 0, 0];
+        var arrpoint = [0, 0, 1, 1, 0, 1, 0, 0];
     }
     else {
         var arrpoint = [1, 1, 0, 0, 1, 0, 0, 0];
@@ -97,11 +97,10 @@ function verify() {
         arrpoint1 = [0, 0, 0, 0, 0, 0, 0, 0];
         alert("Wrong Answer. Try Again!!")
     }
-
 }
 function checkAns() {
     if (modeVar === 1) {
-        document.getElementById("Answer").innerHTML = "Porosity is present at the points C , D, E and F ";
+        document.getElementById("Answer").innerHTML = "Porosity is present at the points C , D and F ";
 
     }
     else {
