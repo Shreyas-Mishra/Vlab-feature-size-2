@@ -12,7 +12,7 @@ function load3() {
         document.getElementById("calBut3").disabled = false;
         document.getElementById("imgblur3").disabled = false;
         document.getElementById("clight3").disabled = false;
-    }, 11800);
+    }, 12000);
 
 }
 

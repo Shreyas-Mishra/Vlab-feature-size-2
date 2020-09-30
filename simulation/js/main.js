@@ -142,7 +142,7 @@ function fon() {
     }
     setTimeout(() => {
         document.getElementById("diagram2").src = "./images/500.jpg";
-    }, 11800);
+    }, 12000);
     // document.getElementById("diagram2").src = "./images/500.jpg";
     // document.getElementById("mag").disabled = false;
     document.getElementById("imgblur").disabled = false;

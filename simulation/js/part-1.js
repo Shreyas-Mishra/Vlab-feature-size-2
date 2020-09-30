@@ -31,13 +31,20 @@ function load1() {
         canvas.height = $("#diagram2").height();
         console.log(modeVar);
     }
+    var time;
+    if (modeVar === 1) {
+        time = 12000;
+    }
+    else {
+        time = 12930;
+    }
     setTimeout(() => {
         if (modeVar === 1)
             document.getElementById("diagram2").src = "./images/se.jpg";
         else
             document.getElementById("diagram2").src = "./images/bse.jpg";
 
-    }, 11800);
+    }, time);
     document.getElementById("imgblur1").disabled = false;
     document.getElementById("clight1").disabled = false;
     document.getElementById("calBut").disabled = false;
