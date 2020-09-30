@@ -21,7 +21,8 @@ p {
 }
 
 .panel img {
-  width: 100%;
+  width: 492px;
+  height: 370px;
 }
 
 .slider:disabled:hover {

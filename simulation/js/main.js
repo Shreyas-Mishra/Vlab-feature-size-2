@@ -140,11 +140,11 @@ function fon() {
         canvas.height = $("#diagram2").height();
         console.log("setting");
     }
-    // setTimeout(() => {
-    //     document.getElementById("diagram2").src = "./images/500.jpg";
-    // }, 11200);
-    document.getElementById("diagram2").src = "./images/500.jpg";
-    document.getElementById("mag").disabled = false;
+    setTimeout(() => {
+        document.getElementById("diagram2").src = "./images/500.jpg";
+    }, 11800);
+    // document.getElementById("diagram2").src = "./images/500.jpg";
+    // document.getElementById("mag").disabled = false;
     document.getElementById("imgblur").disabled = false;
     document.getElementById("clight").disabled = false;
 }
